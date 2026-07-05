@@ -246,10 +246,6 @@ h1 {
   padding: 86px 0;
 }
 
-.section-inner.compact {
-  padding: 66px 0;
-}
-
 .section-inner.narrow {
   max-width: 920px;
 }
@@ -279,7 +275,6 @@ h1 {
 }
 
 .principle-grid,
-.guide-grid,
 .scope-grid,
 .capability-grid,
 .collab-list {
@@ -293,7 +288,6 @@ h1 {
 }
 
 .principle-card,
-.guide-item,
 .scope-item,
 .contribution-card,
 .capability-card,
@@ -316,7 +310,6 @@ h1 {
 }
 
 .principle-card h3,
-.guide-item h3,
 .scope-item h3,
 .capability-card h3,
 .collab-item h3 {
@@ -325,39 +318,12 @@ h1 {
 }
 
 .principle-card p,
-.guide-item p,
 .scope-item p,
 .capability-card p,
 .collab-item p {
   margin-top: 10px;
   color: var(--muted);
   font-size: 15px;
-}
-
-.reader-guide {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.guide-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 28px;
-}
-
-.guide-item {
-  padding: 18px;
-}
-
-.guide-item:nth-child(1) {
-  border-top: 4px solid var(--accent);
-}
-
-.guide-item:nth-child(2) {
-  border-top: 4px solid var(--blue);
-}
-
-.guide-item:nth-child(3) {
-  border-top: 4px solid var(--rose);
 }
 
 .project-section {
@@ -564,8 +530,7 @@ h1 {
   gap: 10px;
 }
 
-.contact-links a,
-.contact-links .disabled-link {
+.contact-links a {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
@@ -574,17 +539,6 @@ h1 {
 .contact-links a:hover {
   border-color: rgba(255, 255, 255, 0.46);
   background: rgba(255, 255, 255, 0.14);
-}
-
-.contact-links .disabled-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 10px 14px;
-  border-radius: var(--radius);
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 14px;
-  font-weight: 800;
 }
 
 .site-footer {
@@ -637,7 +591,6 @@ h1 {
   }
 
   .principle-grid,
-  .guide-grid,
   .capability-grid,
   .collab-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -696,12 +649,7 @@ h1 {
     padding: 62px 0;
   }
 
-  .section-inner.compact {
-    padding: 52px 0;
-  }
-
   .principle-grid,
-  .guide-grid,
   .scope-grid,
   .capability-grid,
   .collab-list,
@@ -726,8 +674,7 @@ h1 {
     flex-direction: column;
   }
 
-  .contact-links a,
-  .contact-links .disabled-link {
+  .contact-links a {
     width: 100%;
     justify-content: center;
   }
