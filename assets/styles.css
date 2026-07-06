@@ -276,6 +276,7 @@ h1 {
 
 .principle-grid,
 .scope-grid,
+.metric-grid,
 .capability-grid,
 .collab-list {
   display: grid;
@@ -412,6 +413,46 @@ h1 {
   background: #f3fbf8;
 }
 
+.metric-heading {
+  margin-top: 36px;
+}
+
+.metric-heading h3 {
+  margin-top: 6px;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.25;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.metric-card {
+  min-width: 0;
+  padding: 16px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.metric-card strong {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.metric-card span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .timeline {
   position: relative;
   display: grid;
@@ -452,7 +493,7 @@ h1 {
 
 .decision-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   padding-top: 18px;
 }
@@ -601,6 +642,7 @@ h1 {
   }
 
   .principle-grid,
+  .metric-grid,
   .capability-grid,
   .collab-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -613,10 +655,6 @@ h1 {
 
   .project-shot {
     max-width: 620px;
-  }
-
-  .decision-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-links {
@@ -665,6 +703,10 @@ h1 {
   .collab-list,
   .decision-grid {
     grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-meta div {
