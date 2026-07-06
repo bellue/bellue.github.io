@@ -388,6 +388,16 @@ h1 {
   font-weight: 650;
 }
 
+.project-link {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
 .scope-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 36px;
