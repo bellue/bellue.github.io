@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="소통을 중시하고 권한, 동시성, 외부 연동을 다루는 주니어 백엔드 개발자 포트폴리오"
+    content="정종우 백엔드 개발자 포트폴리오. TeamPo에서 권한, 동시성, 외부 연동, 예외 처리, Flyway 검증을 구현했습니다."
   />
-  <title>Backend Developer Portfolio | TeamPo</title>
+  <title>정종우 | Backend Portfolio</title>
   <link rel="stylesheet" href="./assets/styles.css?v=20260706-7" />
 </head>
 <body>
@@ -15,14 +15,13 @@
 
   <header class="site-header" aria-label="상단 내비게이션">
     <a class="brand" href="#top" aria-label="포트폴리오 첫 화면으로 이동">
-      <span class="brand-mark" aria-hidden="true">B</span>
-      <span>Backend Portfolio</span>
+      <span class="brand-mark" aria-hidden="true">정</span>
+      <span>정종우 | Backend Portfolio</span>
     </a>
     <nav class="nav-links" aria-label="페이지 섹션">
       <a href="#profile">Profile</a>
       <a href="#teampo">TeamPo</a>
       <a href="#contributions">Contributions</a>
-      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -158,12 +157,12 @@
           <article class="metric-card reveal">
             <strong>22개 Flyway SQL</strong>
             <span>DDL 직접 수정 vs 버전 관리</span>
-            <p>V1~V24 범위의 마이그레이션을 SQL로 남기고, RUN_DB_TESTS=true일 때 Flyway/MySQL 프로필로 부팅 검증했습니다.</p>
+            <p>배포 환경마다 스키마가 어긋나면 장애 추적이 어려워서 변경 이력을 SQL로 고정했고, RUN_DB_TESTS=true에서 Flyway/MySQL 부팅을 검증했습니다.</p>
           </article>
           <article class="metric-card reveal">
-            <strong>443 직접 수신</strong>
-            <span>Cloudflare 프록시 vs Nginx 직접 연결</span>
-            <p>Cloudflare를 앞단 프록시로 두지 않고 EC2/Nginx에서 HTTPS 요청을 직접 받아 왕복 경로와 API 컨테이너 노출 범위를 줄였습니다.</p>
+            <strong>HTTPS 직접 연결</strong>
+            <span>Cloudflare 프록시 vs Nginx 직접 수신</span>
+            <p>불필요한 프록시 경유와 헤더 변수를 줄이기 위해 EC2/Nginx가 443 요청을 직접 받고, API 컨테이너는 내부 네트워크에만 노출했습니다.</p>
           </article>
         </div>
       </div>
@@ -333,42 +332,6 @@
       </div>
     </section>
 
-    <section class="skills-section" id="skills" aria-labelledby="skills-title">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Capability Map</p>
-          <h2 id="skills-title">백엔드 역량과 연결되는 경험</h2>
-        </div>
-
-        <div class="capability-grid">
-          <article class="capability-card reveal">
-            <h3>Java / Spring</h3>
-            <p>Spring Boot, Spring Security, Spring Data JPA 기반으로 인증, 권한, 도메인 정책이 포함된 API를 구현했습니다.</p>
-          </article>
-          <article class="capability-card reveal">
-            <h3>RDB / Transaction</h3>
-            <p>MySQL, Flyway, 트랜잭션 경계, 낙관적 락과 비관적 락을 상태 전이와 동시 수정 문제에 맞춰 적용했습니다.</p>
-          </article>
-          <article class="capability-card reveal">
-            <h3>External API</h3>
-            <p>GitHub App API와 Gemini API를 연동하며 실패, 중복, 권한, 응답 파싱 문제를 별도 예외 흐름으로 다뤘습니다.</p>
-          </article>
-          <article class="capability-card reveal">
-            <h3>Security / Permission</h3>
-            <p>JWT 인증, Redis state, HOST/MEMBER 권한 검증, Organization/Repository 접근 가능성 검증을 서버에서 처리했습니다.</p>
-          </article>
-          <article class="capability-card reveal">
-            <h3>Operational Stability</h3>
-            <p>중복 요청, 동시 수정, 종료 상태 쓰기 제한, PR 대량 조회 부담처럼 운영 중 커질 수 있는 문제를 사전에 고려했습니다.</p>
-          </article>
-          <article class="capability-card reveal">
-            <h3>Collaboration Quality</h3>
-            <p>API 명세, 예외 메시지, Swagger/OpenAPI 문서화, PR 리뷰 피드백 반영을 통해 팀원이 예측 가능한 방식으로 협업하도록 맞췄습니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="collaboration-section" aria-labelledby="collaboration-title">
       <div class="section-inner narrow">
         <div class="section-heading reveal">
@@ -414,7 +377,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Backend Developer Portfolio · TeamPo Case Study</p>
+    <p>정종우 | Backend Portfolio · TeamPo Case Study</p>
     <a href="#top" aria-label="맨 위로 이동">Top</a>
   </footer>
 
