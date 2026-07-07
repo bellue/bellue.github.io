@@ -171,9 +171,34 @@ address {
   isolation: isolate;
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 310px);
+  align-items: center;
+  gap: clamp(30px, 6vw, 76px);
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+}
+
 .hero-content {
-  max-width: 840px;
+  max-width: 760px;
   color: var(--ink);
+}
+
+.hero-photo {
+  width: min(100%, 300px);
+  margin: 0;
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
 }
 
 .eyebrow {
@@ -240,6 +265,46 @@ h1 {
   background: var(--paper);
 }
 
+.hero-info {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  width: min(100%, 860px);
+  margin: 30px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+}
+
+.hero-info div {
+  min-width: 0;
+  padding: 16px 18px;
+  background: var(--paper);
+}
+
+.hero-info dt {
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.hero-info dd {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.hero-info a {
+  color: inherit;
+}
+
+.hero-info a:hover {
+  color: var(--accent-strong);
+}
+
 .section-inner {
   width: min(var(--max), calc(100% - 36px));
   margin: 0 auto;
@@ -277,7 +342,6 @@ h1 {
 .principle-grid,
 .scope-grid,
 .metric-grid,
-.capability-grid,
 .collab-list {
   display: grid;
   gap: 14px;
@@ -291,7 +355,6 @@ h1 {
 .principle-card,
 .scope-item,
 .contribution-card,
-.capability-card,
 .collab-item {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -312,7 +375,6 @@ h1 {
 
 .principle-card h3,
 .scope-item h3,
-.capability-card h3,
 .collab-item h3 {
   font-size: 19px;
   line-height: 1.35;
@@ -320,7 +382,6 @@ h1 {
 
 .principle-card p,
 .scope-item p,
-.capability-card p,
 .collab-item p {
   margin-top: 10px;
   color: var(--muted);
@@ -520,33 +581,6 @@ h1 {
   font-size: 14px;
 }
 
-.skills-section {
-  background: var(--paper);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.capability-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 32px;
-}
-
-.capability-card {
-  padding: 20px;
-}
-
-.capability-card:nth-child(3n + 1) {
-  border-left: 4px solid var(--accent);
-}
-
-.capability-card:nth-child(3n + 2) {
-  border-left: 4px solid var(--blue);
-}
-
-.capability-card:nth-child(3n) {
-  border-left: 4px solid var(--amber);
-}
-
 .collaboration-section {
   background: #f9faf8;
 }
@@ -647,9 +681,23 @@ h1 {
     min-height: 76vh;
   }
 
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-photo {
+    order: -1;
+    justify-self: start;
+    width: min(220px, 52vw);
+  }
+
+  .hero-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .principle-grid,
   .metric-grid,
-  .capability-grid,
   .collab-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -688,6 +736,10 @@ h1 {
     padding: 104px 18px 48px;
   }
 
+  .hero-photo {
+    width: min(168px, 48vw);
+  }
+
   h1 {
     font-size: 42px;
   }
@@ -698,6 +750,14 @@ h1 {
     font-size: 16px;
   }
 
+  .hero-info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-info div {
+    padding: 14px 16px;
+  }
+
   .section-inner {
     width: min(100% - 28px, var(--max));
     padding: 62px 0;
@@ -705,7 +765,6 @@ h1 {
 
   .principle-grid,
   .scope-grid,
-  .capability-grid,
   .collab-list,
   .decision-grid {
     grid-template-columns: 1fr;
