@@ -49,7 +49,7 @@
           <h2 id="profile-title">기술보다 먼저 문제를 정리합니다.</h2>
           <p>
             기능을 바로 구현하기보다 요구사항과 예외 흐름을 먼저 정리합니다.
-            정책, API 명세, 응답 구조를 맞춘 뒤 테스트로 확인 가능한 형태로 코드에 옮깁니다.
+            정책, API 명세, 실패 응답 기준을 맞춘 뒤 테스트로 확인 가능한 형태로 코드에 옮깁니다.
           </p>
         </div>
 
@@ -66,8 +66,8 @@
           </article>
           <article class="principle-card reveal">
             <span class="card-index">03</span>
-            <h3>외부 API 실패를 내부 장애로 키우지 않습니다.</h3>
-            <p>GitHub App callback, PR 동기화, Gemini 응답 파싱에서 재호출, 중복, 권한 실패를 별도 흐름으로 분리했습니다.</p>
+            <h3>예외를 흩어두지 않습니다.</h3>
+            <p>도메인별 실패를 ErrorCode로 모으고 공통 Handler에서 같은 응답 형태로 내려 권한, 충돌, 외부 API 실패를 예측 가능하게 처리했습니다.</p>
           </article>
         </div>
       </div>
@@ -156,14 +156,14 @@
             <p>GitHub App callback replay를 막기 위해 Redis state를 읽는 즉시 삭제하도록 했고, 같은 state가 재사용되지 않는 흐름으로 검증했습니다.</p>
           </article>
           <article class="metric-card reveal">
-            <strong>H2 속도 / MySQL 스키마</strong>
-            <span>단일 테스트 DB vs 프로필 분리</span>
-            <p>빠른 단위 테스트는 H2로 돌리고, Flyway/MySQL 조합은 별도 프로필에서 확인해 테스트 속도와 운영 스키마 신뢰도를 나눴습니다.</p>
+            <strong>22개 Flyway SQL</strong>
+            <span>DDL 직접 수정 vs 버전 관리</span>
+            <p>V1~V24 범위의 마이그레이션을 SQL로 남기고, RUN_DB_TESTS=true일 때 Flyway/MySQL 프로필로 부팅 검증했습니다.</p>
           </article>
           <article class="metric-card reveal">
-            <strong>118개 회귀 케이스</strong>
-            <span>수동 확인 vs 회귀 테스트</span>
-            <p>권한 실패, 상태 전이, 외부 연동 오류처럼 반복해서 깨질 수 있는 조건을 feature 테스트로 묶어 변경 비용을 낮췄습니다.</p>
+            <strong>443 직접 수신</strong>
+            <span>Cloudflare 프록시 vs Nginx 직접 연결</span>
+            <p>Cloudflare를 앞단 프록시로 두지 않고 EC2/Nginx에서 HTTPS 요청을 직접 받아 왕복 경로와 API 컨테이너 노출 범위를 줄였습니다.</p>
           </article>
         </div>
       </div>
@@ -325,7 +325,7 @@
               </section>
               <section>
                 <h4>검증 자료</h4>
-                <p>README 실행 절차, TeamPoApplicationFlywayTests, feature 패키지 기준 29개 테스트 파일과 118개 @Test 케이스로 회귀를 확인했습니다.</p>
+                <p>README 실행 절차, TeamPoApplicationFlywayTests, V1~V24 범위의 22개 Flyway SQL, feature 패키지 테스트로 회귀를 확인했습니다.</p>
               </section>
             </div>
           </article>
